@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mi | Tomas Stauber</title>
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/pages.css">
-</head>
-
-<body>
-    <nav class="navbar">
-        <ul class="navbar-list">
-            <li><a href="./index.html">Tomas Stauber</a></li>
-            <li><a href="./sobre_mi.html">Sobre Mí</a></li>
-            <li><a href="./contacto.html">Contacto</a></li>
-            <li><a href="./servicios.html">Servicios</a></li>
-            <li><a href="./formulario_basico.html">Formulario</a></li>
-        </ul>
-    </nav>
+@section('content')
     <main>
         <div class="container">
             <div class="container" id="sobre-mi-title">
@@ -44,6 +25,3 @@
             </div>
         </div>
     </main>
-</body>
-
-</html>

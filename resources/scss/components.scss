@@ -1,0 +1,17 @@
+
+.navbar {
+    display: flex;
+    padding: 0;
+}
+
+.navbar-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 2rem;
+    
+    li a {
+        color: var(--text);
+        text-decoration: none;
+    }
+}
