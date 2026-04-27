@@ -29,3 +29,10 @@ npm run build
 php artisan serve
 
 Abrir http://127.0.0.1:8000
+
+## Opción con Docker
+
+docker build -t portfolio .
+docker run -p 8000:8000 portfolio
+
+Abrir http://127.0.0.1:8000
