@@ -1,17 +1,137 @@
-
 .navbar {
     display: flex;
-    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    border-bottom: 1px solid var(--border);
+
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    li a {
+        color: var(--text-muted);
+        font-size: 1.2em;
+        text-decoration: none;
+        padding: 1.5rem 0;
+        display: block;
+        border-bottom: 2px solid transparent;
+        margin-left: 2rem;
+        &:hover {
+            color: var(--text);
+            border-bottom: 2px solid var(--accent-primary);
+        }
+    }
 }
 
-.navbar-list {
+#contacto-container {
     display: flex;
     flex-direction: row;
-    list-style: none;
-    gap: 2rem;
-    
-    li a {
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 4rem;
+    min-height: 100vh;
+}
+
+#contacto-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    h1 {
+        font-size: 2rem;
         color: var(--text);
+    }
+
+    p {
+        color: var(--text-muted);
+    }
+}
+
+#contacto-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    a {
+        color: var(--accent-primary);
         text-decoration: none;
+
+        &:hover {
+            color: var(--accent-glow);
+        }
+    }
+}
+
+#contacto-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    label {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+    }
+
+    input, textarea {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.75rem 1rem;
+        color: var(--text);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.9rem;
+        resize: none;
+
+        &:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+    }
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+
+    button[type="submit"] {
+        background-color: var(--accent-primary);
+        color: var(--bg);
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: 'JetBrains Mono', monospace;
+
+        &:hover {
+            background-color: var(--accent-glow);
+        }
+    }
+
+    button[type="reset"] {
+        background-color: transparent;
+        color: var(--text-muted);
+        border: 1px solid var(--border);
+        padding: 0.75rem 2rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: 'JetBrains Mono', monospace;
+
+        &:hover {
+            border-color: var(--accent-primary);
+            color: var(--text);
+        }
     }
 }

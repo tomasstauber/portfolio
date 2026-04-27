@@ -1,3 +1,40 @@
 @forward 'variables';
 @forward 'components';
 @forward 'pages';
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+    padding: 0 4rem;
+}
+
+#my-desc {
+    color: var(--accent-primary);
+}
+
+#instructions {
+    max-width: 600px;
+    p {
+        width: 100%;
+    }
+}
+
+#my-name {
+    font-size: 2rem;
+} h1 {
+    color: var(--text-primary);
+} p {
+    color: var(--text-muted);
+}
+
+#info-console {
+     background-color: var(--bg-surface);
+    border: 1px solid var(--accent-primary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 350px;
+    flex-shrink: 0;
+}

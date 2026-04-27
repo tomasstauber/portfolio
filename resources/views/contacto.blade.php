@@ -2,45 +2,44 @@
 
 @section('content')
     <main>
-        <section class="container">
-            <div class="container" id="contacto-data">
+        <div class="container" id="contacto-container">
+
+            <div id="contacto-info">
                 <h1>Contactate conmigo</h1>
+                <p>Completá el formulario y comunicate conmigo!</p>
+                <div id="contacto-links">
+                    <a href="mailto:tstauberdev@outlook.com">tstauberdev@outlook.com</a>
+                    <a href="https://github.com/tstauberalumno-proof" target="_blank">GitHub</a>
+                </div>
             </div>
-            <div class="container" id="social-fields">
-                <p><a href="">tstauberdev@outlook.com</a></p>
-                <p><a href="https://github.com/tstauberalumno-proof">Github</a></p>
-            </div>
-        </section>
-    
-         <form action="">
 
-            <label for="Nombre">Nombre</label>
-            <input type="text" name="Nombre" id="Nombre" placeholder="Ingrese su nombre" required>
-            <br>
+            <form id="contacto-form" action="">
+                <div class="form-group">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" name="Nombre" id="Nombre" placeholder="Tu nombre" required>
+                </div>
 
-            <label for="Apellido">Apellido</label>
-            <input type="text" name="Apellido" id="Apellido" placeholder="Ingrese su apellido" required>
-            <br>
+                <div class="form-group">
+                    <label for="Apellido">Apellido</label>
+                    <input type="text" name="Apellido" id="Apellido" placeholder="Tu apellido" required>
+                </div>
 
-            <label for="Email">Email</label>
-            <input type="email" name="Email" id="Email" placeholder="Ingrese su email" required>
-            <br>
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="email" name="Email" id="Email" placeholder="Tu email" required>
+                </div>
 
-            <label for="Telefono">Telefono</label>
-            <input type="number" name="Telefono" id="Telefono" placeholder="Ingrese su telefono" required>
-            <br>
+                <div class="form-group">
+                    <label for="Mensaje">Mensaje</label>
+                    <textarea name="Mensaje" id="Mensaje" placeholder="Tu mensaje" rows="4" required></textarea>
+                </div>
 
-            <label for="Edad">Edad</label>
-            <input type="number" name="Edad" id="Edad" placeholder="Ingrese su edad" min="18" max="110"
-                required>
-            <br>
+                <div class="form-actions">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpiar</button>
+                </div>
+            </form>
 
-            <label for="Contrasena">Contraseña</label>
-            <input type="password" name="Contrasena" id="Contrasena" placeholder="Ingrese su contraseña"
-                min="12" max="30" required>
-            <br>
-            
-            <button type="submit">Enviar</button>
-            <button type="reset">Limpiar formulario</button>
-        </form>
+        </div>
     </main>
+@endsection

@@ -1,19 +1,26 @@
 @extends('layout')
 
-@section('context')
+@section('content')
     <main>
-        <div class="container">
-            <div class="container" id="main-services">
-                <h1>Mis servicios</h1>
-            </div>
-            <div class="container" id="div-services">
-                <ul class="services-list">
-                    <li class="service-item">Analisis Funcional</li>
-                    <li class="service-item">Diseño de arquitectura de software</li>
-                    <li class="service-item">Diseño de bases de datos</li>
-                    <li class="service-item">Desarrollo backend</li>
-                </ul>
+        <div class="container" id="projects-container">
+            <h2>// proyectos</h2>
+            <div id="projects-grid">
+
+                <x-project-card
+                    title="Portfolio"
+                    description="Portfolio personal con Laravel, SCSS y Blade."
+                    :tags="['PHP', 'Laravel', 'SCSS']"
+                    link="#"
+                />
+
+                <x-project-card
+                    title="Proyecto 2"
+                    description="Descripción breve."
+                    :tags="['Python', 'Git']"
+                    link="#"
+                />
+
             </div>
         </div>
     </main>
-</body>
+@endsection
