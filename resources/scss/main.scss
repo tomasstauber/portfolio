@@ -1,0 +1,22 @@
+@use 'index' as *;
+
+:root {
+    --bg: #{$bg};
+    --bg-surface: #{$bg-surface};
+    --bg-elevated: #{$bg-elevated};
+    --text: #{$text};
+    --text-muted: #{$text-muted};
+    --accent-primary: #{$accent-primary};
+    --accent-secondary: #{$accent-secondary};
+    --accent-glow: #{$accent-glow};
+    --border: #{$border};
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono';
+}
+
