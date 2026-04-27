@@ -9,7 +9,7 @@
                 <p>Completá el formulario y comunicate conmigo!</p>
                 <div id="contacto-links">
                     <a href="mailto:tstauberdev@outlook.com">tstauberdev@outlook.com</a>
-                    <a href="https://github.com/tstauberalumno-proof" target="_blank">GitHub</a>
+                    <a href="https://github.com/tstauberalumno-proof" target="_blank">+54 9 3446631242</a>
                 </div>
             </div>
 

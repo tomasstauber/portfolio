@@ -7,8 +7,17 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    min-height: 100vh;
+    height: calc(100vh - 120px);
     padding: 0 4rem;
+    margin-top: 60px;
+}
+
+#left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 10rem;
 }
 
 #my-desc {
@@ -24,17 +33,64 @@
 
 #my-name {
     font-size: 2rem;
-} h1 {
-    color: var(--text-primary);
-} p {
-    color: var(--text-muted);
+
+    h1 {
+        color: var(--text-primary);
+    }
+
+    p {
+        color: var(--text-muted);
+    }
 }
 
 #info-console {
-     background-color: var(--bg-surface);
-    border: 1px solid var(--accent-primary);
-    border-radius: 8px;
-    padding: 1.5rem;
-    width: 350px;
-    flex-shrink: 0;
+    width: 520px;
+    border: 1px solid var(--border);
+    align-self:center;
+
+    .terminal-header {
+        background-color: #3c3c3c;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .terminal-buttons {
+            display: flex;
+            gap: 6px;
+
+            span {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+            }
+
+            .btn-close    { background-color: #ff5f57; }
+            .btn-minimize { background-color: #febc2e; }
+            .btn-maximize { background-color: #28c840; }
+        }
+
+        .terminal-title {
+            font-size: 0.75rem;
+            color: #ccc;
+            margin: 0 auto;
+        }
+    }
+
+    .terminal-body {
+        background-color: #1e1e1e;
+        padding: 1rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        p {
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        .prompt { color: #00c9a7; }
+        .path   { color: #48cae4; }
+        .output { color: #e6edf3; padding-left: 1rem; }
+    }
 }
