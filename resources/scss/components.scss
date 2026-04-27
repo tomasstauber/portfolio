@@ -135,3 +135,46 @@
         }
     }
 }
+
+#main-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 4rem;
+    border-top: 1px solid var(--border);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--bg);
+
+    #footer-ascii {
+        pre {
+            font-size: 0.5rem;
+            color: var(--accent-primary);
+            line-height: 1.2;
+            margin: 0;
+        }
+    }
+
+    #footer-info {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+
+            &:hover {
+                color: var(--accent-glow);
+            }
+        }
+
+        span {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+    }
+}
