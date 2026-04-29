@@ -1,13 +1,22 @@
 #!/bin/bash
-echo "APP_NAME=Portfolio
-APP_ENV=local
-APP_KEY=
-APP_DEBUG=true
-APP_URL=http://localhost:8000
-DB_CONNECTION=sqlite
-APP_KEY=" > .env
+set -e
 
-php artisan key:generate --force
-touch database/database.sqlite
+mkdir -p bootstrap/cache \
+    storage/framework/cache/data \
+    storage/framework/sessions \
+    storage/framework/views \
+    storage/logs
+
+chmod -R 775 bootstrap/cache storage
+
+if [ ! -f database/database.sqlite ]; then
+    touch database/database.sqlite
+fi
+
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+
 php artisan migrate --force
-php artisan serve --host=0.0.0.0 --port=8000
+
+php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
