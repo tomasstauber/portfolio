@@ -2,25 +2,28 @@
 
 @section('content')
     <main>
-        <div class="container" id="projects-container">
-            <h2>// proyectos</h2>
-            <div id="projects-grid">
+        <section class="page page--projects">
+            <header class="page__header">
+                <h1 class="page__title">// proyectos</h1>
+            </header>
 
-                <x-project-card
-                    title="Portfolio"
-                    description="Portfolio personal con Laravel, SCSS y Blade."
-                    :tags="['PHP', 'Laravel', 'SCSS']"
-                    link="#"
-                />
+            <div class="page__content">
+                <div class="projects-grid">
+                    <x-project-card
+                        title="Portfolio"
+                        description="Portfolio personal desarrollado con Laravel y SCSS para presentar proyectos y experiencia."
+                        :tags="['PHP', 'Laravel', 'SCSS']"
+                        link="#"
+                    />
 
-                <x-project-card
-                    title="Proyecto 2"
-                    description="Descripción breve."
-                    :tags="['Python', 'Git']"
-                    link="#"
-                />
-
+                    <x-project-card
+                        title="NutriTrack (en desarrollo)"
+                        description="Sistema de gestión sanitaria para ganado, enfocado en el registro de eventos sanitarios y trazabilidad por animal."
+                        :tags="['.NET MAUI', 'C#', 'SQLite']"
+                        link="#"
+                    />
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 @endsection

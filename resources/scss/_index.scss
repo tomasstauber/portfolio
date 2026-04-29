@@ -2,55 +2,76 @@
 @forward 'components';
 @forward 'pages';
 
+/* ===== HOME / HERO ===== */
+
 .container {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-start;
+    justify-content: space-between;
+
     height: calc(100vh - 120px);
-    padding: 0 4rem;
-    margin-top: 60px;
+    max-width: 1480px;
+
+    margin: 60px auto 0;
+    padding: 5.5rem 7rem 6rem;
+
+    box-sizing: border-box;
 }
 
 #left-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    padding-bottom: 10rem;
-}
+    justify-content: flex-start;
+    gap: 2rem;
 
-#my-desc {
-    color: var(--accent-primary);
-}
-
-#instructions {
     max-width: 600px;
-    p {
-        width: 100%;
-    }
+    padding-bottom: 0;
 }
 
 #my-name {
     font-size: 2rem;
 
     h1 {
-        color: var(--text-primary);
+        margin: 0 0 2rem;
+        color: var(--text);
     }
 
     p {
+        margin: 0;
         color: var(--text-muted);
+    }
+}
+
+#my-desc {
+    color: var(--accent-primary);
+
+    h2 {
+        margin: 0;
+    }
+}
+
+#instructions {
+    max-width: 600px;
+
+    p {
+        width: 100%;
+        margin: 0;
+        color: var(--text);
+        line-height: 1.6;
     }
 }
 
 #info-console {
     width: 520px;
     border: 1px solid var(--border);
-    align-self:center;
+    align-self: flex-start;
+    margin-top: 3rem;
 
     .terminal-header {
         background-color: #3c3c3c;
         padding: 8px 12px;
+
         display: flex;
         align-items: center;
         gap: 8px;
@@ -65,7 +86,7 @@
                 border-radius: 50%;
             }
 
-            .btn-close    { background-color: #ff5f57; }
+            .btn-close { background-color: #ff5f57; }
             .btn-minimize { background-color: #febc2e; }
             .btn-maximize { background-color: #28c840; }
         }
@@ -80,6 +101,7 @@
     .terminal-body {
         background-color: #1e1e1e;
         padding: 1rem 1.2rem;
+
         display: flex;
         flex-direction: column;
         gap: 0.3rem;
@@ -90,7 +112,11 @@
         }
 
         .prompt { color: #00c9a7; }
-        .path   { color: #48cae4; }
-        .output { color: #e6edf3; padding-left: 1rem; }
+        .path { color: #48cae4; }
+
+        .output {
+            color: #e6edf3;
+            padding-left: 1rem;
+        }
     }
 }
