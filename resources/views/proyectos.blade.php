@@ -13,8 +13,8 @@
                         title="Portfolio"
                         description="Portfolio personal desarrollado con Laravel, Blade y SCSS para presentar proyectos, formación y experiencia."
                         :tags="['PHP', 'Laravel', 'Blade', 'SCSS']"
-                        link="#"
-                        repo="PONER_LINK_REPO_PORTFOLIO"
+                        link="https://portfolio-pdy1.onrender.com/"
+                        repo="https://github.com/tomasstauber/portfolio.git"
                     />
 
                     <x-project-card
