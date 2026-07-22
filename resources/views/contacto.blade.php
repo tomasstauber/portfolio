@@ -15,25 +15,49 @@
                     </div>
                 </div>
 
-                <form class="contact-form" action="">
+                <form class="contact-form" id="contact-form" method="POST" action="{{ route('contacto.enviar') }}">
+                    @csrf
+
+                    @if (session('exito'))
+                        <p class="form-alert form-alert--ok">{{ session('exito') }}</p>
+                    @endif
+
+                    @if (session('error'))
+                        <p class="form-alert form-alert--error">{{ session('error') }}</p>
+                    @endif
+
                     <div class="form-group">
-                        <label for="Nombre">Nombre</label>
-                        <input type="text" name="Nombre" id="Nombre" placeholder="Tu nombre" required>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" placeholder="Tu nombre"
+                               value="{{ old('nombre') }}" maxlength="80" required>
+                        @error('nombre') <span class="form-error">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="Apellido">Apellido</label>
-                        <input type="text" name="Apellido" id="Apellido" placeholder="Tu apellido" required>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="apellido" placeholder="Tu apellido"
+                               value="{{ old('apellido') }}" maxlength="80" required>
+                        @error('apellido') <span class="form-error">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="Email">Email</label>
-                        <input type="email" name="Email" id="Email" placeholder="Tu email" required>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Tu email"
+                               value="{{ old('email') }}" maxlength="150" required>
+                        @error('email') <span class="form-error">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="Mensaje">Mensaje</label>
-                        <textarea name="Mensaje" id="Mensaje" placeholder="Tu mensaje" rows="4" required></textarea>
+                        <label for="mensaje">Mensaje</label>
+                        <textarea name="mensaje" id="mensaje" placeholder="Tu mensaje" rows="4"
+                                  maxlength="2000" required>{{ old('mensaje') }}</textarea>
+                        @error('mensaje') <span class="form-error">{{ $message }}</span> @enderror
+                    </div>
+
+                    {{-- Honeypot anti-spam: oculto por CSS, invisible para personas --}}
+                    <div class="form-honeypot" aria-hidden="true">
+                        <label for="sitio_web">No completar este campo</label>
+                        <input type="text" name="sitio_web" id="sitio_web" tabindex="-1" autocomplete="off">
                     </div>
 
                     <div class="form-actions">
@@ -45,3 +69,13 @@
         </section>
     </main>
 @endsection
+
+@push('scripts')
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+        const boton = e.currentTarget.querySelector('button[type="submit"]');
+        boton.disabled = true;
+        boton.textContent = 'Enviando...';
+    });
+</script>
+@endpush

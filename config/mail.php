@@ -101,18 +101,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Global "From" Address
+    | Contact Form Recipient
     |--------------------------------------------------------------------------
     |
-    | You may wish for all emails sent by your application to be sent from
-    | the same address. Here you may specify a name and address that is
-    | used globally for all emails that are sent by your application.
+    | Address that receives the messages sent from the portfolio's contact
+    | form. Configurable per environment via the MAIL_CONTACT_TO variable.
     |
     */
 
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
-    ],
+    'contact_to' => env('MAIL_CONTACT_TO', 'tstauberdev@outlook.com'),
 
 ];

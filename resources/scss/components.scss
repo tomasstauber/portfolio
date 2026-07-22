@@ -233,6 +233,47 @@
     }
 }
 
+.form-alert {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid;
+    font-size: 0.85rem;
+    line-height: 1.5;
+
+    &--ok {
+        color: var(--accent-primary);
+        border-color: var(--accent-primary);
+        background-color: rgba(0, 201, 167, 0.08);
+    }
+
+    &--error {
+        color: #ff7b72;
+        border-color: #ff7b72;
+        background-color: rgba(255, 123, 114, 0.08);
+    }
+}
+
+.form-error {
+    color: #ff7b72;
+    font-size: 0.78rem;
+}
+
+/* El honeypot tiene que ser invisible pero seguir existiendo en el DOM.
+   Nada de display:none: algunos bots detectan esa regla y saltean el campo. */
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.form-actions button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .form-actions {
     display: flex;
     gap: 1rem;
