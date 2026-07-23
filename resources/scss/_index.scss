@@ -1,3 +1,5 @@
+@use 'breakpoints' as *;
+
 @forward 'variables';
 @forward 'components';
 @forward 'pages';
@@ -14,9 +16,21 @@
     max-width: 1480px;
 
     margin: 60px auto 0;
-    padding: 5.5rem 7rem 6rem;
+    padding: clamp(2.5rem, 6vw, 5.5rem) clamp(1.25rem, 6vw, 7rem) clamp(3rem, 6vw, 6rem);
 
     box-sizing: border-box;
+
+    @include hasta($bp-lg) {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        gap: 3rem;
+    }
+
+    @include hasta($bp-md) {
+        margin-top: 0;
+        min-height: auto;
+    }
 }
 
 #left-content {
@@ -67,6 +81,12 @@
     border: 1px solid var(--border);
     align-self: flex-start;
     margin-top: 3rem;
+
+    @include hasta($bp-lg) {
+        width: 100%;
+        align-self: stretch;
+        margin-top: 0;
+    }
 
     .terminal-header {
         background-color: #3c3c3c;

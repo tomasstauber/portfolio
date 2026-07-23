@@ -1,16 +1,27 @@
+@use 'breakpoints' as *;
+
 /* ===== SHARED PAGE LAYOUT ===== */
 
 .page {
     min-height: calc(100vh - 120px);
     max-width: 1480px;
-
     margin: 60px auto 0;
-    padding: 5.5rem 7rem 6rem;
+
+    padding: clamp(2.5rem, 6vw, 5.5rem) clamp(1.25rem, 6vw, 7rem) clamp(3rem, 6vw, 6rem);
 
     display: grid;
     grid-template-columns: 1fr;
     align-content: start;
     gap: 3rem;
+
+    @include hasta($bp-md) {
+        margin-top: 0;
+        gap: 2rem;
+
+        // El footer deja de ser fijo en mobile, así que este cálculo sobra.
+        min-height: auto;
+        padding-bottom: 3rem;
+    }
 }
 
 .page__header {
@@ -20,7 +31,7 @@
 .page__title {
     margin: 0;
     color: var(--text);
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     line-height: 1.2;
 }
 
@@ -28,9 +39,8 @@
 
 .projects-grid {
     width: 100%;
-
     display: grid;
-    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
 }
 
@@ -65,6 +75,15 @@
     grid-template-columns: minmax(280px, 0.85fr) minmax(520px, 1.15fr);
     gap: 6rem;
     align-items: start;
+
+    @include hasta($bp-xl) {
+        gap: 3rem;
+    }
+
+    @include hasta($bp-lg) {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
 }
 
 .contact-info {
@@ -100,6 +119,7 @@
         font-size: 0.9rem;
         text-decoration: none;
         cursor: pointer;
+        min-height: 44px;
 
         &:hover,
         &:focus-visible {
@@ -118,4 +138,9 @@
     width: 100%;
     max-width: 680px;
     justify-self: end;
+
+    @include hasta($bp-lg) {
+        max-width: 100%;
+        justify-self: stretch;
+    }
 }
