@@ -9,7 +9,7 @@
         </pre>
     </div>
     <div id="footer-info">
-        <a href="https://github.com/tstauberalumno-proof" target="_blank">
+        <a href="https://github.com/tomasstauber" target="_blank">
             [ github ]
         </a>
         <span>// Tomas Stauber — Backend Developer — 2026</span>

@@ -1,3 +1,5 @@
+@use 'breakpoints' as *;
+
 /* ===== NAVBAR ===== */
 
 .navbar {
@@ -12,6 +14,10 @@
     background: rgba(5, 11, 18, 0.5);
     backdrop-filter: blur(10px);
 
+    @include hasta($bp-md) {
+        padding: 0 1rem;
+    }
+
     ul,
     .navbar-list {
         display: flex;
@@ -20,6 +26,16 @@
 
         margin: 0;
         padding: 0;
+
+        @include hasta($bp-lg) {
+            gap: 1.5rem;
+        }
+
+        @include hasta($bp-sm) {
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 
     li a {
@@ -36,6 +52,16 @@
         &:hover {
             color: var(--text);
             border-bottom-color: var(--accent-primary);
+        }
+
+        @include hasta($bp-lg) {
+            margin-left: 0;
+            font-size: 1rem;
+        }
+
+        @include hasta($bp-sm) {
+            font-size: 0.85rem;
+            padding: 1rem 0;
         }
     }
 }
@@ -60,6 +86,15 @@
     background: rgba(5, 11, 18, 0.5);
     backdrop-filter: blur(10px);
 
+    @include hasta($bp-md) {
+        // En pantallas bajas el footer fijo robaba demasiado alto.
+        position: static;
+        height: auto;
+        padding: 1.25rem 1rem;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
     #footer-ascii {
         pre {
             font-size: 0.5rem;
@@ -67,12 +102,23 @@
             line-height: 1.4;
             margin: 0;
         }
+
+        // El ASCII art tiene ancho fijo por definición: no se adapta.
+        @include hasta($bp-md) {
+            display: none;
+        }
     }
 
     #footer-info {
         display: flex;
         align-items: center;
         gap: 2rem;
+
+        @include hasta($bp-sm) {
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: center;
+        }
 
         a {
             color: var(--accent-primary);
@@ -278,12 +324,21 @@
     display: flex;
     gap: 1rem;
 
+    @include hasta($bp-sm) {
+        flex-direction: column;
+    }
+
     button {
         padding: 0.75rem 2rem;
         border-radius: 6px;
 
         cursor: pointer;
         font-family: 'JetBrains Mono', monospace;
+        min-height: 44px;
+
+        @include hasta($bp-sm) {
+            width: 100%;
+        }
     }
 
     button[type="submit"] {

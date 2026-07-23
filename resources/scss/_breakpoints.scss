@@ -1,0 +1,10 @@
+$bp-xl: 1200px;
+$bp-lg: 992px;
+$bp-md: 768px;
+$bp-sm: 576px;
+
+@mixin hasta($ancho) {
+    @media (max-width: $ancho) {
+        @content;
+    }
+}
