@@ -10,8 +10,14 @@
                     <p>Completá el formulario y comunicate conmigo!</p>
 
                     <div class="contact-links">
-                        <a href="mailto:tstauberdev@outlook.com">tstauberdev@outlook.com</a>
-                        <a href="tel:+5493446631242">+54 9 3446631242</a>
+                        <button type="button" class="contact-copy" id="copiar-email"
+                                data-u="dHN0YXViZXJkZXY=" data-d="b3V0bG9vay5jb20=">
+                            <span class="contact-copy__label" aria-live="polite">// Copiar email</span>
+                        </button>
+
+                        <a href="https://wa.me/5493446631242" target="_blank" rel="noopener" class="contact-link">
+                            // WhatsApp
+                        </a>
                     </div>
                 </div>
 
@@ -72,10 +78,60 @@
 
 @push('scripts')
 <script>
+    // Deshabilita el botón al enviar, evita doble submit
     document.getElementById('contact-form').addEventListener('submit', function (e) {
         const boton = e.currentTarget.querySelector('button[type="submit"]');
         boton.disabled = true;
         boton.textContent = 'Enviando...';
     });
+
+    // Copiar email ofuscado al portapapeles
+    (function () {
+        const boton = document.getElementById('copiar-email');
+        if (!boton) return;
+
+        const etiqueta = boton.querySelector('.contact-copy__label');
+        const original = etiqueta.textContent;
+
+        const armarEmail = () => atob(boton.dataset.u) + '@' + atob(boton.dataset.d);
+
+        const avisar = (texto, ok) => {
+            etiqueta.textContent = texto;
+            boton.classList.toggle('is-ok', ok);
+            setTimeout(() => {
+                etiqueta.textContent = original;
+                boton.classList.remove('is-ok');
+            }, 2000);
+        };
+
+        const copiarFallback = (texto) => {
+            const area = document.createElement('textarea');
+            area.value = texto;
+            area.setAttribute('readonly', '');
+            area.style.cssText = 'position:absolute;left:-9999px';
+            document.body.appendChild(area);
+            area.select();
+            let ok = false;
+            try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+            document.body.removeChild(area);
+            return ok;
+        };
+
+        boton.addEventListener('click', async () => {
+            const email = armarEmail();
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(email);
+                    avisar('// ¡copiado!', true);
+                } else if (copiarFallback(email)) {
+                    avisar('// ¡copiado!', true);
+                } else {
+                    avisar('// ' + email, false);
+                }
+            } catch (e) {
+                avisar('// ' + email, false);
+            }
+        });
+    })();
 </script>
 @endpush
