@@ -84,12 +84,31 @@
     flex-direction: column;
     gap: 0.7rem;
 
-    a {
-        color: var(--accent-primary);
-        text-decoration: none;
+    .contact-copy,
+    .contact-link {
+        display: inline-flex;
+        align-items: center;
         width: fit-content;
 
-        &:hover {
+        background: none;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.5rem 0.9rem;
+
+        color: var(--accent-primary);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.9rem;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--accent-primary);
+            color: var(--accent-glow);
+        }
+
+        &.is-ok {
+            border-color: var(--accent-primary);
             color: var(--accent-glow);
         }
     }
