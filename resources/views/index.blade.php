@@ -34,10 +34,10 @@
                     <p class="output">Tomas Stauber</p>
 
                     <p><span class="prompt">tomas-stauber@portfolio</span>:<span class="path">~</span>$ role</p>
-                    <p class="output">Backend Developer</p>
+                    <p class="output">Estudiante avanzado de Desarrollo de Software</p>
 
                     <p><span class="prompt">tomas-stauber@portfolio</span>:<span class="path">~</span>$ stack</p>
-                    <p class="output">PHP · Laravel · Python · Git</p>
+                    <p class="output">C# · .NET MAUI · EF Core · SQL · Linux · Git</p>
 
                     <p><span class="prompt">tomas-stauber@portfolio</span>:<span class="path">~</span>$ location</p>
                     <p class="output">Argentina</p>
