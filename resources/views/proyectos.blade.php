@@ -30,7 +30,7 @@
                         description="Sistema de gestión sanitaria para ganado, enfocado en el registro de eventos sanitarios, trazabilidad por animal y organización de rodeos."
                         :tags="['.NET MAUI', 'C#', 'PostgreSQL', 'Diseño de sistemas']"
                         link="#"
-                        repo="https://github.com/tomasstauber/NutriTrack.git"
+                        repo="#"
                     />
                 </div>
             </div>
